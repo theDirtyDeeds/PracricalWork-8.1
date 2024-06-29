@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Output();
+            Delete();
         }
         #region Заполнение
         static List<int> Filling()
@@ -39,17 +39,18 @@
 
             Console.WriteLine("Cписок после удаления");
 
-            foreach (int number in numbers) 
-            {
-                Console.WriteLine(number);
-            }  
+            Output(numbers);
             
         }
         #endregion
         #region Вывод на экран
-        static void Output()
-        { 
-            Delete();
+        static void Output(List<int> numbers)
+        {
+            foreach (int number in numbers) 
+            {
+                Console.WriteLine(number);
+            }
+
         }
         #endregion
     }

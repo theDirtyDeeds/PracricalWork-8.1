@@ -2,14 +2,16 @@
 {
     internal class Program
     {
+        static Dictionary<string, string> phoneBook = new Dictionary<string, string>();
         static void Main(string[] args)
         {
+            PhoneBook();
             FindContact();
         }
         #region Добавление контактов
-        static Dictionary<string, string> PhoneBook() 
+        static void PhoneBook() 
         {
-            Dictionary<string, string> phoneBook = new Dictionary<string, string>();
+            
             while (true)
             {
 
@@ -23,21 +25,21 @@
 
                 string contactName = Console.ReadLine();
 
-                phoneBook.Add(phoneNumber, contactName);
+                phoneBook[phoneNumber] = contactName;
+
             }
-            return phoneBook;
+            
         }
         #endregion
         #region Поиск контактов
         static void FindContact() 
         {
-            Dictionary<string, string> contactNumber = PhoneBook();
-
+            
             Console.WriteLine("Для поиска введите номер абонента");
 
             string number  = Console.ReadLine();
 
-            if (contactNumber.TryGetValue(number, out string contactName)) 
+            if (phoneBook.TryGetValue(number, out string contactName)) 
             {
                 Console.WriteLine($"ФИО: {contactName}");
             }
