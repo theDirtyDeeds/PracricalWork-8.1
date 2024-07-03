@@ -10,7 +10,9 @@ namespace PracticalWork_8._4
 
             Console.WriteLine("Введите ФИО");
 
-            string name = Console.ReadLine();
+            string namePerson = Console.ReadLine();
+
+            XAttribute name = new XAttribute("ФИО", namePerson);
 
             person.Add(name);
 
