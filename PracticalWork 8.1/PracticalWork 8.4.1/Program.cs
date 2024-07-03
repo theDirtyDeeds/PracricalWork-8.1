@@ -6,8 +6,11 @@ namespace PracticalWork_8._4._1
     {
         static void Main(string[] args)
         {
-            
-            Filling(); 
+            Person person = new Person();
+
+            Info(person);
+
+            Filling(person); 
         }
         static void Info(Person person) 
         {
@@ -35,12 +38,9 @@ namespace PracticalWork_8._4._1
 
             person.FlatPhone = Console.ReadLine() ?? "";
         }
-        static void Filling() 
+        static void Filling(Person person) 
         {
-            Person person = new Person();
-
-            Info(person);
-
+            
             XElement xPerson = new XElement("Person");
 
             if(person.Name != null) 
