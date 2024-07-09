@@ -8,11 +8,11 @@ namespace PracticalWork_8._4._1
         {
             Person person = new Person();
 
-            Info(person);
+            Info(ref person);
 
             Filling(person); 
         }
-        static void Info(Person person) 
+        static void Info(ref Person person) 
         {
             Console.WriteLine("Введите ФИО");
 
@@ -90,7 +90,7 @@ namespace PracticalWork_8._4._1
             xPerson.Add(address, phones);
 
 
-            xPerson.Save(@"E:\Notebook2.xml");
+            xPerson.Save(@"\Notebook2.xml");
 
         }
     }
